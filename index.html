@@ -1,34 +1,71 @@
 <!DOCTYPE html>
 <head>
-<meta charset="utf-8">
+    <title>o'c, finn - weight tracking</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="finbarr o'callaghan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link href="nv.d3.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Inconsolata' type='text/css'/>
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans'  type='text/css'/>
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Arapey'  type='text/css'/>
+    <link rel="stylesheet" href="http://ocfinn.com/theme/css/style.min.css" type='text/css'/>
 
-<style>
+    <link rel="shortcut icon" href="http://ocfinn.com/static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://ocfinn.com/static/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://ocfinn.com/static/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://ocfinn.com/static/images/apple-touch-icon-114x114.png">
+    <meta charset="utf-8">
+    <link href="nv.d3.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+          overflow-y:scroll;
+        }
+        
+        text {
+          font: 12px sans-serif;
+        }
+        
+        svg {
+          display: block;
+        }
+        
+        #chart svg {
+          height: 500px;
+          min-width: 100px;
+          min-height: 100px;
+        }
+    </style>
 
-body {
-  overflow-y:scroll;
-}
-
-text {
-  font: 12px sans-serif;
-}
-
-svg {
-  display: block;
-}
-
-#chart svg {
-  height: 500px;
-  min-width: 100px;
-  min-height: 100px;
-}
-</style>
+<link rel=”image_src” type=”image/png” src=http://ocfinn.com/static/images/ocfinn_screen.png>
 </head>
-
 <body>
-<div id="chart"> <svg></svg> </div>
-<script src="d3.v2.min.js"></script>
-<script src="nv.d3.min.js"></script>
-<script src="nvd3stuff.js"></script>
+    <div class="container">
+        <div class="sixteen columns">
+            <h1 class="remove-bottom">
+                <a href="http://ocfinn.com" style="margin-top: 40px">o'c, finn</a>
+            </h1>
+            <hr/>
+        </div>
+         <section id="content" class="sixteen columns">
+            <div id="chart">
+                <svg></svg>
+            </div>
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                  _gaq.push(['_setAccount', 'UA-34655271-2']);
+                  _gaq.push(['_setDomainName', 'ocfinn.com']);
+                  _gaq.push(['_trackPageview']);
+                
+                  (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                  })();
+            </script>
+            <script src="d3.v2.min.js"></script>
+            <script src="nv.d3.min.js"></script>
+            <script src="nvd3stuff.js"></script>
+    </div>
 </body>
+
+</html>
