@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo -n "weight?  "
+read weight
+#echo "$(date "+%y-%m-%d"),$weight"
+#echo "$(date "+%y-%m-%d"),$weight" >> ~/weight_tracking/weight_log.dat
+echo "$(date "+%y-%m-%d"),$weight" | tee -a ~/weight_tracking/weight_log.dat
+
+python ~/weight_tracking/prepare_weight_data.py
+
+cd ~/weight_tracking/
+git commit -am "weight update"
+git push
