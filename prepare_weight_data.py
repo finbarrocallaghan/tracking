@@ -16,7 +16,7 @@ def transform_data(data):
     return json_data
 
 parse = lambda x : datetime.strptime(x, '%y-%m-%d')
-w = pd.read_csv(expanduser("~/.weight_log.dat"), parse_dates=[0],
+w = pd.read_csv(expanduser("~/weight_tracking/weight_log.dat"), parse_dates=[0],
                 date_parser=parse,index_col= 0)
 w['rolling mean'] =  pd.rolling_mean(w,10)
 
