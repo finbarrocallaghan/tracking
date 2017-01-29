@@ -19,6 +19,7 @@ parse = lambda x : datetime.strptime(x, '%y-%m-%d')
 w = pd.read_csv(expanduser("~/weight_tracking/weight_log.dat"), parse_dates=[0],
                 date_parser=parse,index_col= 0)
 w['rolling mean'] =  pd.rolling_mean(w,10)
+# w.rolling(window=10,center=False).mean()
 
 jd = transform_data(w[10:])
 with open(expanduser("~/weight_tracking/weightdata.json"), 'w') as outfile:
