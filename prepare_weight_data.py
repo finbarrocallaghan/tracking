@@ -12,7 +12,8 @@ with open(expanduser("~/weight_tracking/weightdata.csv"), 'r') as f:
     for row in reader:
         dates.append(row[8])
         weights.append(float(row[-1]))                                                                                                                                         
-                                                                                                                                                                               
+dates = dates[::-1]                                                                                                                                                                               
+weights = weights[::-1]                                                                                                                                                                               
 avgs = []
 for i, x in enumerate(weights,1):
   window_avg = ''                                                                                                                                                              
